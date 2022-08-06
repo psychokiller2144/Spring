@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Inicio</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            h1{text-align: center}
+            
+            th{
+                background-color: #68bd45;
+                color: #3d3d3d
+            }
+            
+            table{
+                border: 2px solid #68bd45;
+                background-color: #68bd45;
+                width: 100%
+            }
+            
+            td {
+                background-color: #3d3d3d;
+                color: #fdfdfc;
+                border: initial;
+            }
+            
+            p{ text-align: center}
+            
+            .warning{
+                font-weight: bold;
+                color: #3d3d3d;
+                background: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Listado Personas</h1>
+        <div th:if="${personas != null and !personas.empty}">
+            <table>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>E-Mail</th>
+                    <th>Telefono</th>
+                </tr>
+                <tr th:each="persona : ${personas}">
+                    <td th:text="${persona.nombre}"></td> 
+                    <td th:text="${persona.apellido}"></td> 
+                    <td th:text="${persona.email}"></td> 
+                    <td th:text="${persona.telefono}"></td> 
+                </tr>
+            </table>
+        </div>
+        <p th:if="${personas == null or personas.empty}" class="warning"> ¡La lista de personas esta vacia! </p>
+        
+            
+    </body>
+</html>
