@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title> Plantilla </title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <header th:fragment="header">
+            <h1> Control Clientes</h1>
+            <div th:replace="layout/plantilla :: paragraph"></div>
+        </header>
+        
+        <div th:fragment="paragraph">
+            <p> Este es un elemento de plantilla que puedo agregar arbitrariamente </p>
+        </div>
+            
+        <footer th:fragment="footer">
+            <p> &copy; 2022 Copyright: MyDomain.com </p>
+        </footer>
+    </body>
+</html>

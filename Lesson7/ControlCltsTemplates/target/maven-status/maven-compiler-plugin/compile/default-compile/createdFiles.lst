@@ -1,0 +1,6 @@
+com\example\domain\Persona.class
+com\example\web\HomeController.class
+com\example\service\PersonaService.class
+com\example\dao\PersonaDao.class
+com\example\FirstProgramApplication.class
+com\example\service\PersonaServiceImp.class

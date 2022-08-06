@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Datos de la Persona</title>
+        <meta charset="UTF-8"/>
+        <style>
+            span.validationError {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Datos de la Persona</h1>
+        
+        <a th:href="@{/}">Regresar</a> <br/>
+        
+        <form th:action="@{/guardar}" method="post" th:object="${persona}">
+            
+            <input type="hidden" name="idpersona" th:field="*{idPersona}"/>
+            
+            <label>
+                Nombre: <input type="text" name="nombre" th:field="*{nombre}"/>
+                <span class="validationError" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"> Err </span>
+            </label><br/>
+            
+            <label>
+                Apellido: <input type="text" name="apellido" th:field="*{apellido}"/>
+                <span class="validationError" th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}"> Err </span>
+            </label><br/>
+            
+            <label>
+                E-Mail: <input type="email" name="email" th:field="*{email}"/>
+                <span class="validationError" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"> Err </span>
+            </label><br/>
+            
+            <label>
+                Telefono: <input type="tel" name="telefono" th:field="*{telefono}"/>
+                <span class="validationError" th:if="${#fields.hasErrors('telefono')}" th:errors="*{telefono}"> Err </span>
+            </label><br/>
+            
+            <input type="submit" name="guardar" value="Guardar"/>
+        </form>
+        
+    </body>
+</html>
