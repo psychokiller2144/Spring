@@ -6,17 +6,42 @@
         <meta charset="UTF-8"/>
     </head>
     <body>
+
+        <div class="container-fluid bg-dark " th:fragment="header">
+            <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                    <i class="fas fa-vector-square text-light me-2 fs-2"></i>
+                    <span class="fs-4 text-light">My Header</span>
+                </a>
+
+                <ul class="nav nav-pills">
+                    <li class="nav-item"><a href="#" class="nav-link text-light" >Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link text-light">Features</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link text-light">Pricing</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link text-light">FAQs</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link text-light ">About</a></li>
+                </ul>
+            </header>
+        </div>
+
+        <!--
         <header th:fragment="header">
             <h1> Control Clientes</h1>
             <div th:replace="layout/plantilla :: paragraph"></div>
-        </header>
-        
+        </header> -->
+
         <div th:fragment="paragraph">
             <p> Este es un elemento de plantilla que puedo agregar arbitrariamente </p>
         </div>
-            
-        <footer th:fragment="footer">
-            <p> &copy; 2022 Copyright: MyDomain.com </p>
+
+        <footer class="footer mt-auto py-3 bg-dark">
+            <div class="container">
+                <p class="text-light"> &copy; 2022 Copyright: MyDomain.com </p>
+            </div>
         </footer>
+        
+        <!-- <footer th:fragment="footer">
+            <p> &copy; 2022 Copyright: MyDomain.com </p>
+        </footer> -->
     </body>
 </html>
