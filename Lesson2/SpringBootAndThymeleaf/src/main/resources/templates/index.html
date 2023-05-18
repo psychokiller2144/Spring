@@ -20,6 +20,9 @@
     <body>
         <h1> ¡¡ Inicio !!</h1>
         <p th:text="${mensaje}"></p>
+        
+        <p> Attr: <span th:text="${persona2.nombre}">  </span> </p>
+        
         <div th:if="${personas != null and !personas.empty}">
             <table>
                 <tr>
